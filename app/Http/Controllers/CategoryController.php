@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Models\Product;
-use Illuminate\Support\Facades\DB;
 
-class ProductController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,6 @@ class ProductController extends Controller
     public function index()
     {
         //
-        $products = Product::all();
-        return $products;
     }
 
     /**
@@ -85,8 +82,8 @@ class ProductController extends Controller
     {
         //
     }
-    public function getProductsByCategory($category){
-        $products = Product::where('category', $category)->get();
-        return $products;
+    public function fillCategories(){
+        $categories = Category::all();
+        return $categories;
     }
 }
