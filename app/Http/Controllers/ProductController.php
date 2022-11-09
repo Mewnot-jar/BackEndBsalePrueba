@@ -85,8 +85,14 @@ class ProductController extends Controller
     {
         //
     }
+
     public function getProductsByCategory($category){
         $products = Product::where('category', $category)->get();
+        return $products;
+    }
+
+    public function searchProducts($search){
+        $products = Product::where('name', 'like', "%$search%")->get();
         return $products;
     }
 }
