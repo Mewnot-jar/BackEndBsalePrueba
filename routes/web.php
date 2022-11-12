@@ -18,4 +18,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get("/pruebas", 'App\Http\Controllers\CategoryController@fillCategories');

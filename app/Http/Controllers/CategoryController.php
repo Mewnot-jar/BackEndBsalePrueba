@@ -14,7 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        return $categories;
     }
 
     /**
@@ -81,9 +82,5 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
-    }
-    public function fillCategories(){
-        $categories = Category::all();
-        return $categories;
     }
 }
